@@ -9,7 +9,7 @@ services:
       - db_data:/var/lib/postgresql/data
 
   server:
-    build: ./server
+    image: ghcr.io/lerourou/my-favorite-places-server:latest
     ports:
       - "3000:3000"
     environment:
@@ -21,7 +21,7 @@ services:
       - db
 
   client:
-    build: ./client
+    image: ghcr.io/lerourou/my-favorite-places-client:latest
     ports:
       - "80:80"
     depends_on:
